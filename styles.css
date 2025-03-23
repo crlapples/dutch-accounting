@@ -7,6 +7,7 @@ body {
   background-color: #4b2e83;
   color: #fff;
   position: relative;
+  overflow-x: hidden;
 }
 
 .circle {
