@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table of Contents - Dutch Accounting Information</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/jpg" href="favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="homepage">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+  <div class="circle circle-3"></div>
+
+  <div id="container">
+    <div id="header-wrapper">
+      <div id="header">
+        <div id="branding">
+          <div id="site-logo">
+            <a href="index.html">
+              <img src="symbols/placeholder.jpg" alt="Dutch Accounting Information">
+            </a>
+          </div>
+          <div id="site-title">
+            <a href="index.html">Dutch Accounting Information</a>
+          </div>
+        </div>
+        
+        <div id="navigation">
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="container">
+                <div class="nav-collapse collapse">
+                  <ul class="nav">
+                    <li class="dropdown">
+                      <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <i class="fas fa-book"></i> Browse
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                        <li role="menuitem"><a href="contents.html">Table of Contents</a></li>
+                        <li role="menuitem"><a href="new.html">What's New</a></li>
+                        <li role="menuitem"><a href="random.html">Random Entry</a></li>
+                        <li role="menuitem"><a href="archives.html">Archives</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <i class="fas fa-info-circle"></i> About
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                        <li role="menuitem"><a href="info.html">Editorial Information</a></li>
+                        <li role="menuitem"><a href="about.html">About the Project</a></li>
+                        <li role="menuitem"><a href="board.html">Editorial Board</a></li>
+                        <li role="menuitem"><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                        <i class="fas fa-leaf"></i> Support
+                      </a>
+                      <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                        <li role="menuitem"><a href="support.html">Support the Project</a></li>
+                        <li role="menuitem"><a href="donate.html">Make a Donation</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="search">
+          <form id="search-form" method="get" action="search/">
+            <input type="search" name="query" placeholder="Search DAI">
+            <div class="search-btn-wrapper">
+              <button class="btn search-btn" type="submit" aria-label="search">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="content">
+      <div id="toc-wrapper">
+        <button id="request-article" class="btn-primary" onclick="openContactForm()">
+          <i class="fas fa-plus-circle"></i> Verzoek een nieuw artikel
+        </button>
+        
+        <h1>Table of Contents</h1>
+
+        <div id="toc-nav">
+          <p id="letter-nav"></p>
+        </div>
+
+        <div id="toc-content"></div>
+        
+        <div class="new-files-section" data-md-file="entries/new-articles.md"></div>
+      </div>
+    </div>
+
+    <div id="footer" class="scroll-block">
+      <div id="footer-menu">
+        <div class="menu-block">
+          <h4><i class="fas fa-book"></i> Browse</h4>
+          <ul role="menu">
+            <li role="menuitem"><a href="contents.html">Table of Contents</a></li>
+            <li role="menuitem"><a href="new.html">What's New</a></li>
+            <li role="menuitem"><a href="random.html">Random Entry</a></li>
+            <li role="menuitem"><a href="archives.html">Archives</a></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h4><i class="fas fa-info-circle"></i> About</h4>
+          <ul role="menu">
+            <li role="menuitem"><a href="info.html">Editorial Information</a></li>
+            <li role="menuitem"><a href="about.html">About the Project</a></li>
+            <li role="menuitem"><a href="board.html">Editorial Board</a></li>
+            <li role="menuitem"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="menu-block">
+          <h4><i class="fas fa-leaf"></i> Support</h4>
+          <ul role="menu">
+            <li role="menuitem"><a href="support.html">Support the Project</a></li>
+            <li role="menuitem"><a href="donate.html">Make a Donation</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="site-credits">
+        <p>
+          Dutch Accounting Information is <a href="info.html#c">copyright © 2025</a> by the Accounting Information Team.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="contact-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeContactForm()">&times;</span>
+      <h2>Verzoek een nieuw artikel</h2>
+      <form id="article-request-form" action="mailto:editor@dutchaccountinginfo.nl" method="post" enctype="text/plain">
+        <div class="form-group">
+          <label for="name">Naam:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="article-title">Artikel titel:</label>
+          <input type="text" id="article-title" name="article-title" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Beschrijving van het gewenste artikel:</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Verstuur verzoek</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const articles = [
+      { title: "Consolidatie", path: "entries/consolidatie.md", author: "Dutch Accounting Standards Board" },
+      { title: "Cijferbeoordeling", path: "entries/cijferbeoordeling.md", author: "Financial Reporting Institute" },
+      { title: "Eigen vermogen", path: "entries/eigen-vermogen.md", author: "Dutch Accounting Standards Board" },
+      { title: "Financiële vaste activa", path: "entries/financiele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
+      { title: "Groottecriteria", path: "entries/groottecriteria.md", author: "Ministry of Finance" },
+      { title: "Herwaardering", path: "entries/herwaardering.md", author: "Dutch Accounting Standards Board" },
+      { title: "Immateriële vaste activa", path: "entries/immateriele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
+      { title: "Kortlopende schulden", path: "entries/kortlopende-schulden.md", author: "Dutch Accounting Standards Board" },
+      { title: "Langlopende schulden", path: "entries/langlopende-schulden.md", author: "Dutch Accounting Standards Board" },
+      { title: "Liquide middelen", path: "entries/liquide-middelen.md", author: "Dutch Accounting Standards Board" },
+      { title: "Lease", path: "entries/lease.md", author: "Dutch Accounting Standards Board" },
+      { title: "Materiële vaste activa", path: "entries/materiele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
+      { title: "Niet uit balans blijkende verplichtingen", path: "entries/niet-uit-balans-blijkende-verplichtingen.md", author: "Dutch Accounting Standards Board" },
+      { title: "Omzet", path: "entries/omzet.md", author: "Dutch Accounting Standards Board" },
+      { title: "Termijnen (IB)", path: "entries/termijnen-ib.md", author: "Dutch Tax Authority" },
+      { title: "Voorraad", path: "entries/voorraad.md", author: "Dutch Accounting Standards Board" },
+      { title: "Voorzieningen", path: "entries/voorzieningen.md", author: "Dutch Accounting Standards Board" }
+    ];
+
+    function generateLetterNav() {
+      const letterNav = document.getElementById('letter-nav');
+      const letters = new Set(articles.map(article => article.title.charAt(0).toUpperCase()));
+      const sortedLetters = Array.from(letters).sort();
+      
+      sortedLetters.forEach(letter => {
+        const link = document.createElement('a');
+        link.href = `#${letter}`;
+        link.className = 'btn';
+        link.textContent = letter;
+        letterNav.appendChild(link);
+        letterNav.appendChild(document.createTextNode(' '));
+      });
+    }
+
+    function generateContent() {
+      const contentDiv = document.getElementById('toc-content');
+      const groupedArticles = articles.reduce((acc, article) => {
+        const letter = article.title.charAt(0).toUpperCase();
+        if (!acc[letter]) acc[letter] = [];
+        acc[letter].push(article);
+        return acc;
+      }, {});
+
+      Object.keys(groupedArticles).sort().forEach(letter => {
+        const letterSection = document.createElement('div');
+        letterSection.innerHTML = `<a id="${letter}"></a><h2>${letter}</h2><ul id="list-${letter}"></ul>`;
+        contentDiv.appendChild(letterSection);
+
+        const list = document.getElementById(`list-${letter}`);
+        groupedArticles[letter].forEach(article => {
+          const listItem = document.createElement('li');
+          listItem.innerHTML = `<a href="index.html?file=${article.path}"><strong>${article.title}</strong></a> (${article.author})`;
+          list.appendChild(listItem);
+        });
+      });
+    }
+
+    function openContactForm() {
+      document.getElementById('contact-modal').style.display = 'block';
+    }
+
+    function closeContactForm() {
+      document.getElementById('contact-modal').style.display = 'none';
+    }
+
+    function closeAllDropdowns() {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.classList.remove('show');
+      });
+    }
+
+    document.querySelectorAll('.dropdown-toggle').forEach(toggle => {
+      toggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdownMenu = this.nextElementSibling;
+        const isOpen = dropdownMenu.classList.contains('show');
+        
+        closeAllDropdowns();
+        if (!isOpen) {
+          dropdownMenu.classList.add('show');
+        }
+      });
+    });
+
+    window.addEventListener('click', function(e) {
+      if (!e.target.matches('.dropdown-toggle')) {
+        closeAllDropdowns();
+      }
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+      generateLetterNav();
+      generateContent();
+    });
+
+    window.addEventListener('scroll', function() {
+      const tocNav = document.getElementById('toc-nav');
+      const container = document.getElementById('container');
+      const scrollPosition = window.pageYOffset;
+      
+      if (scrollPosition > 100) {
+        tocNav.style.position = 'fixed';
+        tocNav.style.top = '0';
+        tocNav.style.left = '5%';
+        tocNav.style.width = '100%';
+        tocNav.style.maxWidth = container.offsetWidth + 'px';
+        tocNav.style.margin = '0 auto';
+        tocNav.style.boxSizing = 'border-box';
+        tocNav.style.zIndex = '1001';
+      } else {
+        tocNav.style.position = 'static';
+        tocNav.style.width = 'auto';
+        tocNav.style.maxWidth = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
