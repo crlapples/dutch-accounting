@@ -297,7 +297,7 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -451,7 +451,7 @@ body {
   border-bottom-right-radius: 10px;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 9999;
+  z-index: 1000;
 }
 
 #footer-menu {
