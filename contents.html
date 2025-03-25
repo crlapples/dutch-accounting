@@ -260,26 +260,44 @@
     document.addEventListener('DOMContentLoaded', function() {
       generateLetterNav();
       generateContent();
+
+      document.getElementById('letter-nav').addEventListener('click', function(e) {
+        if (e.target.matches('#letter-nav a')) {
+          e.preventDefault();
+          const targetLetter = e.target.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetLetter);
+          
+          if (targetElement) {
+            const offset = document.getElementById('toc-nav').offsetHeight;
+            const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            
+            window.scrollTo({
+              top: elementPosition - offset - 20,
+              behavior: 'smooth'
+            });
+          }
+        }
+      });
     });
 
     window.addEventListener('scroll', function() {
       const tocNav = document.getElementById('toc-nav');
-      const container = document.getElementById('container');
-      const scrollPosition = window.pageYOffset;
+      const content = document.getElementById('content');
+      const contentTop = content.getBoundingClientRect().top;
       
-      if (scrollPosition > 100) {
+      if (contentTop <= 0) {
         tocNav.style.position = 'fixed';
         tocNav.style.top = '0';
-        tocNav.style.left = '5%';
-        tocNav.style.width = '100%';
-        tocNav.style.maxWidth = container.offsetWidth + 'px';
-        tocNav.style.margin = '0 auto';
-        tocNav.style.boxSizing = 'border-box';
+        tocNav.style.left = '50%';
+        tocNav.style.transform = 'translateX(-50%)';
+        tocNav.style.width = 'calc(100% - 80px)';
+        tocNav.style.maxWidth = `${content.offsetWidth}px`;
         tocNav.style.zIndex = '1001';
       } else {
         tocNav.style.position = 'static';
+        tocNav.style.left = 'auto';
+        tocNav.style.transform = 'none';
         tocNav.style.width = 'auto';
-        tocNav.style.maxWidth = 'none';
       }
     });
   </script>
