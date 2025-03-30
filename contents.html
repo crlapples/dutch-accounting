@@ -156,23 +156,23 @@
 
   <script>
     const articles = [
-      { title: "Consolidatie", path: "entries/consolidatie.md", author: "Dutch Accounting Standards Board" },
-      { title: "Cijferbeoordeling", path: "entries/cijferbeoordeling.md", author: "Financial Reporting Institute" },
-      { title: "Eigen vermogen", path: "entries/eigen-vermogen.md", author: "Dutch Accounting Standards Board" },
-      { title: "Financiële vaste activa", path: "entries/financiele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
-      { title: "Groottecriteria", path: "entries/groottecriteria.md", author: "Ministry of Finance" },
-      { title: "Herwaardering", path: "entries/herwaardering.md", author: "Dutch Accounting Standards Board" },
-      { title: "Immateriële vaste activa", path: "entries/immateriele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
-      { title: "Kortlopende schulden", path: "entries/kortlopende-schulden.md", author: "Dutch Accounting Standards Board" },
-      { title: "Langlopende schulden", path: "entries/langlopende-schulden.md", author: "Dutch Accounting Standards Board" },
-      { title: "Liquide middelen", path: "entries/liquide-middelen.md", author: "Dutch Accounting Standards Board" },
-      { title: "Lease", path: "entries/lease.md", author: "Dutch Accounting Standards Board" },
-      { title: "Materiële vaste activa", path: "entries/materiele-vaste-activa.md", author: "Dutch Accounting Standards Board" },
-      { title: "Niet uit balans blijkende verplichtingen", path: "entries/niet-uit-balans-blijkende-verplichtingen.md", author: "Dutch Accounting Standards Board" },
-      { title: "Omzet", path: "entries/omzet.md", author: "Dutch Accounting Standards Board" },
-      { title: "Termijnen (IB)", path: "entries/termijnen-ib.md", author: "Dutch Tax Authority" },
-      { title: "Voorraad", path: "entries/voorraad.md", author: "Dutch Accounting Standards Board" },
-      { title: "Voorzieningen", path: "entries/voorzieningen.md", author: "Dutch Accounting Standards Board" }
+      { title: "Consolidatie", path: "entries/consolidatie.html", author: "Dutch Accounting Standards Board" },
+      { title: "Cijferbeoordeling", path: "entries/cijferbeoordeling.html", author: "Financial Reporting Institute" },
+      { title: "Eigen vermogen", path: "entries/eigen-vermogen.html", author: "Dutch Accounting Standards Board" },
+      { title: "Financiële vaste activa", path: "entries/financiele-vaste-activa.html", author: "Dutch Accounting Standards Board" },
+      { title: "Groottecriteria", path: "entries/groottecriteria.html", author: "Vincent Groot" },
+      { title: "Herwaardering", path: "entries/herwaardering.html", author: "Dutch Accounting Standards Board" },
+      { title: "Immateriële vaste activa", path: "entries/immateriele-vaste-activa.html", author: "Dutch Accounting Standards Board" },
+      { title: "Kortlopende schulden", path: "entries/kortlopende-schulden.html", author: "Dutch Accounting Standards Board" },
+      { title: "Langlopende schulden", path: "entries/langlopende-schulden.html", author: "Dutch Accounting Standards Board" },
+      { title: "Liquide middelen", path: "entries/liquide-middelen.html", author: "Dutch Accounting Standards Board" },
+      { title: "Lease", path: "entries/lease.html", author: "Dutch Accounting Standards Board" },
+      { title: "Materiële vaste activa", path: "entries/materiele-vaste-activa.html", author: "Dutch Accounting Standards Board" },
+      { title: "Niet uit balans blijkende verplichtingen", path: "entries/niet-uit-balans-blijkende-verplichtingen.html", author: "Dutch Accounting Standards Board" },
+      { title: "Omzet", path: "entries/omzet.html", author: "Dutch Accounting Standards Board" },
+      { title: "Termijnen (IB)", path: "entries/termijnen-ib.html", author: "Dutch Tax Authority" },
+      { title: "Voorraad", path: "entries/voorraad.html", author: "Dutch Accounting Standards Board" },
+      { title: "Voorzieningen", path: "entries/voorzieningen.html", author: "Dutch Accounting Standards Board" }
     ];
 
     function generateLetterNav() {
@@ -207,7 +207,7 @@
         const list = document.getElementById(`list-${letter}`);
         groupedArticles[letter].forEach(article => {
           const listItem = document.createElement('li');
-          listItem.innerHTML = `<a href="index.html?file=${article.path}"><strong>${article.title}</strong></a> (${article.author})`;
+          listItem.innerHTML = `<a href="${article.path}"><strong>${article.title}</strong></a> (${article.author})`;
           list.appendChild(listItem);
         });
       });
