@@ -449,32 +449,6 @@
       });
     });
 
-    document.querySelectorAll('#article-nav a').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        if (this.classList.contains('back-to-top')) {
-          scrollToTop();
-          return;
-        }
-        
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 100,
-            behavior: 'smooth'
-          });
-          
-          if (window.innerWidth < 768) {
-            const sidebar = document.querySelector('.collapse-sidebar');
-            sidebar.classList.add('collapse');
-            sidebar.classList.remove('in');
-          }
-        }
-      });
-    });
-
     let scrollSpeed = 3;
 
     window.addEventListener("wheel", function (e) {
